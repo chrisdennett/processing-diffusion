@@ -140,6 +140,12 @@ void update() {
       laplaceB += prev[i][j+1].b*0.2; // below
       laplaceB += prev[i][j-1].b*0.2; // above
       
+      laplaceB += prev[i-1][j-1].b*0.05; // above left 
+      laplaceB += prev[i+1][j-1].b*0.05; // above right
+      laplaceB += prev[i-1][j+1].b*0.05; // below left
+      laplaceB += prev[i+1][j+1].b*0.05; // below right
+      
+      // slides diagonally to bottom right
       laplaceB += prev[i-1][j-1].b*0.07; // above left 
       laplaceB += prev[i+1][j-1].b*0.05; // above right
       laplaceB += prev[i-1][j+1].b*0.05; // below left
